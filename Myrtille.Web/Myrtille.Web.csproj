@@ -303,6 +303,7 @@
     <Content Include="GetHash.aspx" />
     <Content Include="img\bandwidthTest.png" />
     <Content Include="img\icons8-menu-horizontal-21.png" />
+    <Content Include="img\Lyniate_Corepoint_Logo-vert_Dark.jpg" />
     <Content Include="img\myrtille.png" />
     <Content Include="img\RemoteDesktop.png" />
     <Content Include="img\RemoteSSH.png" />

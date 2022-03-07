@@ -25,12 +25,14 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Web.Configuration;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Myrtille.Helpers;
 using Myrtille.Services.Contracts;
 using Myrtille.Web.Properties;
+using OneLogin.Saml;
 
 namespace Myrtille.Web
 {
@@ -49,6 +51,7 @@ namespace Myrtille.Web
         private bool _clientIPTracking;
         private bool _toolbarEnabled;
         private bool _loginEnabled;
+        private bool _oneLoginEnabled;
         private string _loginUrl;
         private bool _httpSessionUseUri;
 
@@ -128,6 +131,11 @@ namespace Myrtille.Web
                 _loginUrl = ConfigurationManager.AppSettings["LoginUrl"];
             }
 
+            if(!bool.TryParse(ConfigurationManager.AppSettings["OneLoginEnabled"], out _oneLoginEnabled))
+            {
+                _oneLoginEnabled = false;
+            }
+
             // cookieless session
             var sessionStateSection = (SessionStateSection)ConfigurationManager.GetSection("system.web/sessionState");
             _httpSessionUseUri = sessionStateSection.Cookieless == HttpCookieMode.UseUri;
@@ -142,6 +150,29 @@ namespace Myrtille.Web
             object sender,
             EventArgs e)
         {
+            if (_oneLoginEnabled)
+            {
+                AccountSettings accountSettings = new AccountSettings();
+                if (String.IsNullOrEmpty(Request.Form["SAMLResponse"]))
+                {
+                    AppSettings samlSettings = new AppSettings();
+                    samlSettings.assertionConsumerServiceUrl = Request.Url.AbsoluteUri;
+                    OneLogin.Saml.AuthRequest req = new AuthRequest(samlSettings, accountSettings);
+                    Response.Redirect(accountSettings.idp_sso_target_url + "?SAMLRequest=" + Server.UrlEncode(req.GetRequest(AuthRequest.AuthRequestFormat.Base64)));
+                }
+                else
+                {
+                    OneLogin.Saml.Response samlResponse = new Response(accountSettings);
+                    samlResponse.LoadXmlFromBase64(Request.Form["SAMLResponse"]);
+                    if (!samlResponse.IsValid())
+                    {
+                        System.Diagnostics.Trace.TraceWarning("SAML Auth Failed");
+                        _authorizedRequest = false;
+                        UpdateControls();
+                        return;
+                    }
+                }
+            }
             // client ip protection
             if (_clientIPTracking)
             {

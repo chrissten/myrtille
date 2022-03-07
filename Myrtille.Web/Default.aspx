@@ -35,7 +35,7 @@
         <!-- mobile devices -->
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
         
-        <title>Myrtille<%=RemoteSession != null && !RemoteSession.ConnectionService && (RemoteSession.State == RemoteSessionState.Connecting || RemoteSession.State == RemoteSessionState.Connected) && !string.IsNullOrEmpty(RemoteSession.ServerAddress) ? " - " + RemoteSession.ServerAddress.ToString() : ""%></title>
+        <title>Lyniate Remote<%=RemoteSession != null && !RemoteSession.ConnectionService && (RemoteSession.State == RemoteSessionState.Connecting || RemoteSession.State == RemoteSessionState.Connected) && !string.IsNullOrEmpty(RemoteSession.ServerAddress) ? " - " + RemoteSession.ServerAddress.ToString() : ""%></title>
         
         <link rel="icon" type="image/x-icon" href="favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="<%=BundleTable.Bundles.ResolveBundleUrl("~/css/Default.css", true)%>"/>
@@ -99,7 +99,7 @@
                 <div runat="server" id="hostConnectDiv">
 
                     <!-- type -->
-                    <div class="inputDiv">
+                    <div class="inputDiv" style="display: none;">
                         <label id="hostTypeLabel" for="hostType">Protocol</label>
                         <select runat="server" id="hostType" onchange="onHostTypeChange(this);" title="host type">
                             <option value="0" selected="selected">RDP</option>
@@ -109,7 +109,7 @@
                     </div>
 
                     <!-- security -->
-                    <div class="inputDiv" id="securityProtocolDiv">
+                    <div class="inputDiv" id="securityProtocolDiv" style="display: none;">
                         <label id="securityProtocolLabel" for="securityProtocol">Security</label>
                         <select runat="server" id="securityProtocol" title="NLA = safest, RDP = backward compatibility (if the server doesn't enforce NLA) and interactive logon (leave user and password empty); AUTO for Hyper-V VM or if not sure">
                             <option value="0" selected="selected">AUTO</option>
@@ -121,9 +121,9 @@
                     </div>
 
                     <!-- server -->
-                    <div class="inputDiv">
+                    <div class="inputDiv" style="visibility:hidden;display:none;">
                         <label id="serverLabel" for="server">Server (:port)</label>
-                        <input type="text" runat="server" id="server" title="host name or address (:port, if other than the standard 3389 (rdp), 2179 (rdp over vm bus) or 22 (ssh)). use [] for ipv6. CAUTION! if using a hostname or if you have a connection broker, make sure the DNS is reachable by myrtille (or myrtille has joined the domain)"/>
+                        <input type="text" runat="server" value="localhost" id="server" title="host name or address (:port, if other than the standard 3389 (rdp), 2179 (rdp over vm bus) or 22 (ssh)). use [] for ipv6. CAUTION! if using a hostname or if you have a connection broker, make sure the DNS is reachable by myrtille (or myrtille has joined the domain)"/>
                     </div>
 
                     <!-- hyper-v -->
@@ -144,7 +144,7 @@
                     </div>
 
                     <!-- domain -->
-                    <div class="inputDiv" id="domainDiv">
+                    <div class="inputDiv" id="domainDiv" style="display: none;">
                         <label id="domainLabel" for="domain">Domain (optional)</label>
                         <input type="text" runat="server" id="domain" title="user domain (if applicable)"/>
                     </div>
@@ -515,7 +515,7 @@
                 target.setAttribute('data-y', y);
             }
 
-		</script>
+        </script>
 
 	</body>
 

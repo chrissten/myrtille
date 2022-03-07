@@ -18,27 +18,23 @@
 
 /* Windows style UI */
 
-body
-{
+body {
     padding: 0px;
     margin: 0px;
     background-color: #34495e;
     color: #ecf0f1;
 }
 
-a
-{
+a {
     text-decoration: none;
     color: #ecf0f1;
 }
 
-a img
-{
-    border: 0;
-}
+    a img {
+        border: 0;
+    }
 
-*
-{
+* {
     font-family: "Segoe UI";
 }
 
@@ -46,8 +42,7 @@ a img
 /*** LOGIN                                                                                                                                                                                         ***/
 /*****************************************************************************************************************************************************************************************************/
 
-#login
-{
+#login {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,9 +55,8 @@ a img
 
 /* customizable logo (replace the background image by yours) */
 /* remote desktop logo, credits BlackVariant (Patrick) http://blackvariant.deviantart.com */
-#logo
-{
-    background-image: url("../img/RemoteDesktop.png");
+#logo {
+    background-image: url("../img/Lyniate_Corepoint_Logo-vert_Dark.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 128px;
@@ -72,32 +66,27 @@ a img
     margin-bottom: 20px;
 }
 
-.inputDiv
-{
+.inputDiv {
     display: inline-block;
 }
 
 label,
-#mfaProvider
-{
+#mfaProvider {
     float: left;
     width: 200px;
     margin-top: 2px;
 }
 
-#mfaProvider
-{
+#mfaProvider {
     cursor: pointer;
 }
 
-#mfaProvider:hover
-{
-    text-decoration: underline;
-}
+    #mfaProvider:hover {
+        text-decoration: underline;
+    }
 
 #hostType,
-#securityProtocol
-{
+#securityProtocol {
     width: 204px;
     margin-top: 2px;
 }
@@ -108,54 +97,46 @@ label,
 #user,
 #password,
 #mfaPassword,
-#program
-{
+#program {
     width: 200px;
     margin-top: 2px;
 }
 
-#vmEnhancedMode
-{
+#vmEnhancedMode {
     margin-top: 6px;
     margin-left: 0px;
 }
 
 /* program to run is better defined into an URL, but can be enabled into the login screen */
 #programLabel,
-#program
-{
+#program {
     visibility: hidden;
     display: none;
 }
 
-#connect
-{
+#connect {
     width: 204px;
     margin-top: 2px;
     margin-left: 200px;
     display: inline-block;
 }
 
-#version
-{
+#version {
     font-size: 10px;
     display: inline-block;
 }
 
-#adminDiv
-{
+#adminDiv {
     margin-top: 5px;
     font-size: 12px;
     text-decoration: underline;
 }
 
-#errorDiv
-{
+#errorDiv {
     margin-left: 200px;
 }
 
-#connectError
-{
+#connectError {
     color: #ff0000;
 }
 
@@ -163,71 +144,60 @@ label,
 /*** HOSTS                                                                                                                                                                                         ***/
 /*****************************************************************************************************************************************************************************************************/
 
-#hosts
-{
+#hosts {
     /* if needed */
 }
 
-#hostsControl
-{
+#hostsControl {
     /* if needed */
 }
 
-#enterpriseUserInfo
-{
+#enterpriseUserInfo {
     width: 250px;
 }
 
 #newRDPHost,
 #newSSHHost,
-#logout
-{
+#logout {
     width: 150px;
 }
 
-#hostsList
-{
+#hostsList {
     /* if needed */
 }
 
-.hostDiv
-{
+.hostDiv {
     display: inline-block;
     text-align: center;
     font-size: 15px;
 }
 
-.hostDiv:hover
-{
-    background-color: #ecf0f1;
-    color: #000;
-}
+    .hostDiv:hover {
+        background-color: #ecf0f1;
+        color: #000;
+    }
 
 .hostLink,
-.hostName
-{
+.hostName {
     cursor: pointer;
 }
 
-.hostName:hover
-{
-    text-decoration: underline;
-}
+    .hostName:hover {
+        text-decoration: underline;
+    }
 
 /*****************************************************************************************************************************************************************************************************/
 /*** TOOLBAR                                                                                                                                                                                       ***/
 /*****************************************************************************************************************************************************************************************************/
 
-#toolbarToggle
-{
+#toolbarToggle {
     position: absolute;
     border: 1px solid #ddd;
     background-color: #F4F4F4;
     z-index: 200;
 }
 
-#toolbar
-{
+#toolbar {
     position: absolute;
     left: 23px;
     overflow: auto;
@@ -237,8 +207,7 @@ label,
 
 /* connection */
 #serverInfo,
-#userInfo
-{
+#userInfo {
     float: left;
     width: 150px;
 }
@@ -257,8 +226,7 @@ label,
 #mrc,
 #vswipe,
 #share,
-#disconnect
-{
+#disconnect {
     float: left;
     width: 110px;
 }
@@ -269,8 +237,7 @@ label,
 
 /* background fader */
 
-#bgfDiv
-{
+#bgfDiv {
     position: absolute;
     visibility: hidden;
     display: none;
@@ -287,8 +254,7 @@ label,
 
 /* draggable popups */
 
-#dragDiv
-{
+#dragDiv {
     position: absolute;
     overflow: hidden;
     left: 50px;
@@ -300,27 +266,23 @@ label,
     touch-action: none;
 }
 
-#dragHandle
-{
+#dragHandle {
     height: 20px;
     background-color: silver;
 }
 
 /* virtual keyboard popup */
 
-#virtualKeyboardPopup
-{
+#virtualKeyboardPopup {
     width: 470px;
     height: 290px;
 }
 
-#virtualKeyboardPopupDesc
-{
+#virtualKeyboardPopupDesc {
     font-weight: bold;
 }
 
-#virtualKeyboardPopupText
-{
+#virtualKeyboardPopupText {
     width: 425px;
     height: 150px;
     margin-bottom: 5px;
@@ -328,27 +290,23 @@ label,
 
 /* on-screen keyboard popup */
 
-#onScreenKeyboardPopup
-{
+#onScreenKeyboardPopup {
     width: 500px;
     height: 300px;
 }
 
 /* show dialog popup */
 
-#showDialogPopup
-{
+#showDialogPopup {
     width: 470px;
     height: 240px;
 }
 
-#showDialogPopupDesc
-{
+#showDialogPopupDesc {
     font-weight: bold;
 }
 
-#showDialogPopupText
-{
+#showDialogPopupText {
     width: 425px;
     height: 150px;
     margin-bottom: 5px;
@@ -356,196 +314,165 @@ label,
 
 /* file storage popup */
 
-#fileStoragePopup
-{
+#fileStoragePopup {
     width: 470px;
     height: 130px;
 }
 
-#fileStoragePopupDesc
-{
+#fileStoragePopupDesc {
     font-weight: bold;
 }
 
-#fileToDownloadSelect
-{
+#fileToDownloadSelect {
     width: 250px;
 }
 
 /* host popup */
 
 #editHostPopup,
-#editHostPopupInner
-{
+#editHostPopupInner {
     width: 420px;
     height: 450px;
 }
 
-#editHostPopupInner
-{
+#editHostPopupInner {
     color: #000;
     background: #fff;
 }
 
-#editHostPopupTitle
-{
+#editHostPopupTitle {
     padding-top: 20px;
     padding-left: 10px;
 }
 
-.editHostPopupInput
-{
+.editHostPopupInput {
     padding-left: 10px;
 }
 
 /* credential popup */
 
 #editCredentialPopup,
-#editCredentialPopupInner
-{
+#editCredentialPopupInner {
     width: 400px;
     height: 250px;
 }
 
-#editCredentialPopupInner
-{
+#editCredentialPopupInner {
     color: #000;
     background: #fff;
 }
 
-#editCredentialsPopupTitle
-{
+#editCredentialsPopupTitle {
     padding-top: 20px;
     padding-left: 10px;
 }
 
-.editCredentialPopupInput
-{
+.editCredentialPopupInput {
     padding-left: 10px;
 }
 
 /* host session popup */
 
 #editHostSessionPopup,
-#editHostSessionPopupInner
-{
+#editHostSessionPopupInner {
     width: 400px;
     height: 500px;
 }
 
-#editHostSessionPopupInner
-{
+#editHostSessionPopupInner {
     color: #000;
     background: #fff;
 }
 
-#editHostSessionPopupTitle
-{
+#editHostSessionPopupTitle {
     padding-top: 20px;
     padding-left: 10px;
 }
 
-.editHostSessionPopupInput
-{
+.editHostSessionPopupInput {
     padding-left: 10px;
 }
 
-#sessionUrl
-{
+#sessionUrl {
     width: 370px;
 }
 
 /* share session popup */
 
 #shareSessionPopup,
-#shareSessionPopupInner
-{
+#shareSessionPopupInner {
     width: 400px;
     height: 370px;
 }
 
-#shareSessionPopupInner
-{
+#shareSessionPopupInner {
     color: #000;
     background: #fff;
 }
 
-#shareSessionPopupTitle
-{
+#shareSessionPopupTitle {
     padding-top: 20px;
     padding-left: 10px;
 }
 
-.shareSessionPopupInput
-{
+.shareSessionPopupInput {
     padding-left: 10px;
 }
 
-#guestControlLabel
-{
+#guestControlLabel {
     padding-top: 10px;
     width: 100px;
 }
 
-#guestControl
-{
+#guestControl {
     margin-top: 17px;
 }
 
 /* change password popup */
 
 #changePasswordPopup,
-#changePasswordPopupInner
-{
+#changePasswordPopupInner {
     width: 400px;
     height: 330px;
 }
 
-#changePasswordPopupInner
-{
+#changePasswordPopupInner {
     color: #000;
     background: #fff;
 }
 
-#changePasswordPopupTitle
-{
+#changePasswordPopupTitle {
     padding-top: 20px;
     padding-left: 10px;
 }
 
-.changePasswordMessage
-{
+.changePasswordMessage {
     padding-left: 10px;
 }
 
-.changePasswordPopupInput
-{
+.changePasswordPopupInput {
     padding-left: 10px;
 }
 
-#changeError
-{
+#changeError {
     padding-left: 10px;
     font-size: 10pt;
     color: red;
-    width:380px;
+    width: 380px;
 }
 
 /* copy clipboard popup */
 
-#copyClipboardPopup
-{
+#copyClipboardPopup {
     width: 470px;
     height: 240px;
 }
 
-#copyClipboardPopupDesc
-{
+#copyClipboardPopupDesc {
     font-weight: bold;
 }
 
-#copyClipboardPopupText
-{
+#copyClipboardPopupText {
     width: 425px;
     height: 150px;
     margin-bottom: 5px;
@@ -553,19 +480,16 @@ label,
 
 /* paste clipboard popup */
 
-#pasteClipboardPopup
-{
+#pasteClipboardPopup {
     width: 470px;
     height: 240px;
 }
 
-#pasteClipboardPopupDesc
-{
+#pasteClipboardPopupDesc {
     font-weight: bold;
 }
 
-#pasteClipboardPopupText
-{
+#pasteClipboardPopupText {
     width: 425px;
     height: 150px;
     margin-bottom: 5px;
@@ -577,8 +501,7 @@ label,
 
 /* remote session display */
 
-#displayDiv
-{
+#displayDiv {
     position: absolute;
     z-index: 100;
     /* fix touchscreen on Edge (disabled by default and using pointer events instead of touch) by emulating mouse events */
@@ -587,72 +510,65 @@ label,
 
 /* remote session display: canvas (HTML5) */
 
-canvas
-{
-	position: absolute;
+canvas {
+    position: absolute;
     z-index: 100;
 }
 
 /* remote session display: divs (HTML4) */
 
-.imageDiv
-{
-	position: absolute;
-	background-repeat: no-repeat;
-	overflow: hidden;
-	z-index: 100;
+.imageDiv {
+    position: absolute;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 100;
 }
 
 /* remote session helpers */
 
-#cacheDiv
-{
-    visibility: hidden;
-	display: none;
-}
-
-#statDiv
-{
-    visibility: hidden;
-	display: none;
-	font-size: 10px;
-	background-color: black;
-	color: lightgrey;
-	z-index: 200;
-}
-
-#debugDiv
-{
+#cacheDiv {
     visibility: hidden;
     display: none;
-	font-size: 12px;
-	background-color: lightgrey;
+}
+
+#statDiv {
+    visibility: hidden;
+    display: none;
+    font-size: 10px;
+    background-color: black;
+    color: lightgrey;
+    z-index: 200;
+}
+
+#debugDiv {
+    visibility: hidden;
+    display: none;
+    font-size: 12px;
+    background-color: lightgrey;
     color: black;
-	z-index: 200;
+    z-index: 200;
 }
 
-#msgDiv
-{
-	position: absolute;
-	visibility: hidden;
+#msgDiv {
+    position: absolute;
+    visibility: hidden;
     display: none;
-	font-size: 18px;
-	font-weight: bold;
+    font-size: 18px;
+    font-weight: bold;
     overflow: hidden;
-	background-color: red;
-	color: white;
-	z-index: 200;
+    background-color: red;
+    color: white;
+    z-index: 200;
 }
 
-#kbhDiv
-{
-	position: absolute;
-	visibility: hidden;
-	display: none;
-	font-size: 18px;
-	font-weight: bold;
-	text-align: left;
-	background-color: #FAF8CC;
-	color: black;
-	z-index: 200;
+#kbhDiv {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    background-color: #FAF8CC;
+    color: black;
+    z-index: 200;
 }
